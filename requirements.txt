@@ -5,3 +5,4 @@ pydantic-settings==2.14.2
 pydantic_core==2.46.4
 uvicorn==0.51.0
 chromadb
+pysqlite3-binary

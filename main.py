@@ -1,6 +1,14 @@
-import os
 import sys
+# Override standard sqlite3 with pysqlite3 for ChromaDB compatibility on Render
+try:
+    import pysqlite3
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except ImportError:
+    pass
+
+import os
 from fastapi import FastAPI, HTTPException
+# ... (the rest of your imports and code remain exactly the same)
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import chromadb
